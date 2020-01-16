@@ -14,14 +14,31 @@ module.exports = {
         //     loader1: path.resolve(__dirname, 'loaders', 'loader1.js')
         // }
     },
+    devtool: 'source-map',
+    watch: true,
     module: {
         // loader执行 从左到右， 从下到上
         // loader 分类 1. pre  2. normal 4. inline 3. post
         rules: [
             {
                 test: /\.js$/,
-                use: ['loader3', 'loader2', 'loader1']
+                use: {
+                    loader: 'comment-loader',
+                    options: {
+                        text: '黄楚才',
+                        filename: path.resolve(__dirname, 'comment.js')
+                    }
+                }
             }
+            // {
+            //     test: /\.js$/,
+            //     use: {
+            //         loader: 'babel-loader',
+            //         options: {
+            //             presets: ['@babel/preset-env']
+            //         }
+            //     }
+            // }
         ]
     },
     plugins: [
