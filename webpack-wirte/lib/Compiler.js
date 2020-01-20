@@ -77,7 +77,7 @@ class Compiler {
     }
 
     /**
-     * 解析源码
+     * 解析源码 生成模块依赖
      * @param source 模块内容
      * @param parentPath  模块父目录
      */

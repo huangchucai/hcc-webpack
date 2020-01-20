@@ -39,6 +39,10 @@ module.exports = {
                     path.resolve(__dirname, 'loader', 'style-loader'),
                     path.resolve(__dirname, 'loader', 'less-loader')
                 ]
+            },
+            {
+                test: /\.png$/,
+                use: 'file-loader'
             }
         ]
     },
